@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -12,7 +12,8 @@
 @tailwind utilities;
 
 #app {
-  @apply bg-gray;
+  @apply bg-lightGray;
   @apply min-h-screen;
+  @apply shadow;
 }
 </style>

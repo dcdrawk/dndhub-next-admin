@@ -3,6 +3,8 @@
     <h1 class="text-3xl">
       Log In
     </h1>
+
+    <input>
   </div>
 </template>
 

@@ -1,16 +1,17 @@
 module.exports = {
   purge: [],
   theme: {
-    boxShadow: {
-      inner: 'inset 0 4px 10px 3px rgba(0, 0, 0, 0.25)'
-    },
+    // boxShadow: {
+    //   inner: 'inset 0 4px 10px 3px rgba(0, 0, 0, 0.25)'
+    // },
     extend: {
       colors: {
         primary: '#8f0000',
         beige: '#fbedbf',
         green: '#dbe5c3',
         gold: '#e8d065',
-        gray: '#e3e0db',
+        lightGray: '#e3e0db',
+        gray: '#bbb8ac',
         red: '#9b2a1a'
       }
     }
