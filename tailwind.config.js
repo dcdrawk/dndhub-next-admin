@@ -14,6 +14,16 @@ module.exports = {
         gray: '#bbb8ac',
         red: '#9b2a1a',
         lightRed: '#e38d80'
+      },
+      spacing: {
+        72: '18rem',
+        84: '21rem',
+        96: '24rem'
+      },
+      maxWidth: {
+        72: '18rem',
+        84: '21rem',
+        96: '24rem'
       }
     }
   },

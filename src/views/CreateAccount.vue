@@ -1,6 +1,6 @@
 <template>
-  <div class="home container mx-auto">
-    <h1 class="text-3xl">
+  <div class="pt-20 container max-w-96 px-4 sm:px-0 mx-auto">
+    <h1 class="text-2xl text-center mb-4">
       Create Account
     </h1>
 
