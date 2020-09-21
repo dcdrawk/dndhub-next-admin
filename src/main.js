@@ -4,5 +4,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import './plugins/vee-validate'
+import firebase from './plugins/firebase'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(firebase)
+  .mount('#app')

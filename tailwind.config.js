@@ -12,7 +12,8 @@ module.exports = {
         gold: '#e8d065',
         lightGray: '#e3e0db',
         gray: '#bbb8ac',
-        red: '#9b2a1a'
+        red: '#9b2a1a',
+        lightRed: '#e38d80'
       }
     }
   },

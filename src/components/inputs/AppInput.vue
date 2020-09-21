@@ -3,24 +3,25 @@
     <Field
       v-slot="{ field, errorMessage }"
       :name="name"
-      :value="value"
       :rules="rules"
     >
       <input
         v-bind="field"
         :placeholder="placeholder"
+        :value="modelValue"
         :type="type"
-        rules="required"
+        :name="name"
         :autocomplete="autocomplete"
-        @input="$emit('input')"
+        class="p-2 rounded border-gray border w-full"
+        @input="$emit('update:modelValue', $event.target.value)"
       >
 
-      <p class="text-red">
-        {{ errorMessage }}
+      <p
+        v-if="errorMessage"
+        class="text-red"
+      >
+        <small>{{ errorMessage }}</small>
       </p>
-      <!-- <p v-if="errors.length"> -->
-      <!-- {{ errors }}! -->
-      <!-- </p> -->
     </Field>
   </div>
 </template>
@@ -37,7 +38,7 @@ export default {
   },
 
   props: {
-    value: {
+    modelValue: {
       type: [String, Number],
       default: ''
     },
@@ -71,7 +72,8 @@ export default {
       required: false
     }
   },
-  emits: ['input']
+
+  emits: ['input', 'update:modelValue']
 }
 </script>
 
