@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonStyles">
+  <button :class="[buttonStyles, computedButtonStyles]">
     <slot v-if="!loading" />
     <AppLoadingSpinner v-if="loading" />
   </button>
@@ -7,11 +7,11 @@
 
 <script>
 import AppLoadingSpinner from '@/components/spinners/AppLoadingSpinner'
+import { computed } from 'vue'
 
 const buttonStyles = [
-  'w-full',
   'bg-gold',
-  'p-2 mb-2',
+  'py-2 px-4 mb-2',
   'font-medium',
   'border border-gray rounded-lg',
   'focus:outline-none',
@@ -30,12 +30,22 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+
+    block: {
+      type: Boolean,
+      default: false
     }
   },
 
-  setup () {
+  setup (props) {
     return {
-      buttonStyles
+      buttonStyles,
+      computedButtonStyles: computed(() => {
+        return {
+          'w-full': props.block
+        }
+      })
     }
   }
 }

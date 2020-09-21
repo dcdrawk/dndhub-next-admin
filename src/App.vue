@@ -1,12 +1,19 @@
 <template>
   <div class="app">
+    <TheToolbar />
     <router-view />
   </div>
 </template>
 
 <script>
+import TheToolbar from '@/components/layout/TheToolbar'
+
 export default {
   name: 'App',
+
+  components: {
+    TheToolbar
+  },
 
   computed: {
     user () {
