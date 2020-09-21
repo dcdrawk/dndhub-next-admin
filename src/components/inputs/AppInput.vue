@@ -1,18 +1,15 @@
 <template>
-  <div class="mb-2">
-    <Field
-      v-slot="{ field, errorMessage }"
+  <Field
+    v-slot="{ field, errorMessage }"
+    :name="name"
+    :rules="rules"
+  >
+    <AppInputWrapper
+      :id="id"
+      :label="label"
+      :error-message="errorMessage"
       :name="name"
-      :rules="rules"
     >
-      <label
-        v-if="label"
-        :for="name"
-        class="font-semibold block"
-      >
-        {{ label }}
-      </label>
-
       <input
         :id="id || name"
         v-bind="field"
@@ -21,29 +18,25 @@
         :type="type"
         :name="name"
         :autocomplete="autocomplete"
-        class="p-2 rounded border-gray border w-full"
+        :class="inputStyles"
         @input="handleInput"
       >
-
-      <p
-        v-if="errorMessage"
-        class="text-red"
-      >
-        <small>{{ errorMessage }}</small>
-      </p>
-    </Field>
-  </div>
+    </AppInputWrapper>
+  </Field>
 </template>
 
 <script>
 import { Field } from 'vee-validate'
+import { inputStyles } from './input-styles'
+import AppInputWrapper from './AppInputWrapper'
 
 export default {
   // Name
   name: 'AppInput',
 
   components: {
-    Field
+    Field,
+    AppInputWrapper
   },
 
   props: {
@@ -102,6 +95,7 @@ export default {
     }
 
     return {
+      inputStyles,
       handleInput
     }
   }

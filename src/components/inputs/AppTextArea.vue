@@ -5,45 +5,41 @@
       :name="name"
       :rules="rules"
     >
-      <label
-        v-if="label"
-        :for="name"
-        class="font-semibold block"
-      >
-        {{ label }}
-      </label>
-
-      <textarea
-        :id="id || name"
-        v-bind="field"
-        :placeholder="placeholder"
-        :value="modelValue"
-        :type="type"
+      <AppInputWrapper
+        :id="id"
+        :label="label"
+        :error-message="errorMessage"
         :name="name"
-        :autocomplete="autocomplete"
-        rows="5"
-        class="p-2 rounded border-gray border w-full h-full block"
-        @input="handleInput"
-      />
-
-      <p
-        v-if="errorMessage"
-        class="text-red"
       >
-        <small>{{ errorMessage }}</small>
-      </p>
+        <textarea
+          :id="id || name"
+          v-bind="field"
+          :class="inputStyles"
+          :placeholder="placeholder"
+          :value="modelValue"
+          :type="type"
+          :name="name"
+          :autocomplete="autocomplete"
+          :rows="rows"
+          class="block"
+          @input="handleInput"
+        />
+      </AppInputWrapper>
     </Field>
   </div>
 </template>
 
 <script>
 import { Field } from 'vee-validate'
+import { inputStyles } from './input-styles'
+import AppInputWrapper from './AppInputWrapper'
 
 export default {
   // Name
   name: 'AppInput',
 
   components: {
+    AppInputWrapper,
     Field
   },
 
@@ -89,7 +85,13 @@ export default {
 
     autocomplete: {
       type: String,
-      default: 'text',
+      default: '',
+      required: false
+    },
+
+    rows: {
+      type: [String, Number],
+      default: '4',
       required: false
     }
   },
@@ -103,7 +105,8 @@ export default {
     }
 
     return {
-      handleInput
+      handleInput,
+      inputStyles
     }
   }
 }
