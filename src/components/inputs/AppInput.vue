@@ -5,7 +5,16 @@
       :name="name"
       :rules="rules"
     >
+      <label
+        v-if="label"
+        :for="name"
+        class="font-semibold block"
+      >
+        {{ label }}
+      </label>
+
       <input
+        :id="id || name"
         v-bind="field"
         :placeholder="placeholder"
         :value="modelValue"
@@ -46,6 +55,17 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+
+    label: {
+      type: String,
+      default: ''
+    },
+
+    id: {
+      type: String,
+      default: '',
+      required: true
     },
 
     name: {

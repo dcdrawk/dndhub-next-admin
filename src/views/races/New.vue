@@ -1,23 +1,21 @@
 <template>
-  <div class="container mx-auto">
-    <div>New Race</div>
-
+  <div class="container mx-auto pt-10">
     <AppForm
       :fields="formFields"
       @input="handleInput"
     />
 
     <div class="flex">
+      <AppButton class="mr-2">
+        Create
+      </AppButton>
       <AppButton
-        class="mr-2"
-        bg-color="gray"
+        bg-color="white"
+        outlined
         text-color="black"
         flat
       >
-        Create
-      </AppButton>
-      <AppButton>
-        Create
+        Cancel
       </AppButton>
     </div>
   </div>
@@ -32,7 +30,7 @@ import AppTextArea from '@/components/inputs/AppTextArea'
 
 export default {
   // Name
-  name: 'Races',
+  name: 'NewRace',
 
   components: {
     AppButton,
@@ -47,13 +45,17 @@ export default {
     const formFields = ref([
       {
         width: 'full',
+        label: 'Name',
         placeholder: 'Name',
+        name: 'race-name',
         component: rawInput,
         value: ''
       },
       {
         width: 'full',
-        placeholder: 'Description',
+        label: 'Alignment',
+        placeholder: '',
+        name: 'alignment',
         component: rawTextArea,
         value: ''
       },
@@ -76,24 +78,6 @@ export default {
       console.log(field, value)
       field.value = value
     }
-
-    // const firebase = inject('firebase')
-
-    // async function getRaces () {
-    //   const raceRef = await firebase.database().ref('/gameData/races')
-    //   raceRef.on('value', (snapshot) => {
-    //     raceData.value = (snapshot.val()) || []
-    //   })
-    // }
-
-    // async function addDummyRace () {
-    //   await firebase.database().ref('/gameData/races').push({
-    //     name: 'Halfling',
-    //     speed: '25'
-    //   })
-    // }
-
-    // getRaces()
 
     return {
       formFields,

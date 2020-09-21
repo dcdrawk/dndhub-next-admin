@@ -8,7 +8,10 @@
     >
       <component
         :is="field.component"
+        :label="field.label"
         :placeholder="field.placeholder"
+        :name="field.name"
+        :type="field.type"
         :model-value="field.value"
         @input="handleFormInput(field, $event)"
       />

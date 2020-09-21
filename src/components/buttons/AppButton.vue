@@ -52,10 +52,14 @@ export default {
       default: false
     },
 
-    border: {
-      type: {
+    outlined: {
+      type: Boolean,
+      default: false
+    },
 
-      }
+    borderColor: {
+      type: String,
+      default: 'gray'
     }
   },
 
@@ -66,6 +70,7 @@ export default {
         `bg-${props.bgColor} text-${props.textColor}`,
         {
           'w-full': props.block,
+          [`border border-${props.borderColor}`]: props.outlined,
           'shadow hover:shadow-md active:shadow-none transition-shadow duration-150': !props.flat
         }
       ])
