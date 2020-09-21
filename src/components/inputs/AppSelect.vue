@@ -1,30 +1,33 @@
 <template>
-  <div class="mb-2">
-    <Field
-      v-slot="{ field, errorMessage }"
+  <Field
+    v-slot="{ field, errorMessage }"
+    :name="name"
+    :rules="rules"
+  >
+    <AppInputWrapper
+      :id="id"
+      :label="label"
+      :error-message="errorMessage"
       :name="name"
-      :rules="rules"
     >
-      <AppInputWrapper
-        :id="id"
-        :label="label"
-        :error-message="errorMessage"
+      <select
+        :id="id || name"
+        v-bind="field"
+        :value="modelValue"
         :name="name"
+        :class="inputStyles"
+        @change="handleInput($event)"
       >
-        <textarea
-          :id="id || name"
-          v-bind="field"
-          :class="inputStyles"
-          :placeholder="placeholder"
-          :value="modelValue"
-          :name="name"
-          :rows="rows"
-          class="block"
-          @input="handleInput"
-        />
-      </AppInputWrapper>
-    </Field>
-  </div>
+        <option
+          v-for="(item, index) in items"
+          :key="index"
+          :value="itemValue ? item[itemValue] : item"
+        >
+          {{ itemText ? item[itemText] : item }}
+        </option>
+      </select>
+    </AppInputWrapper>
+  </Field>
 </template>
 
 <script>
@@ -34,11 +37,11 @@ import AppInputWrapper from './AppInputWrapper'
 
 export default {
   // Name
-  name: 'AppInput',
+  name: 'AppSelect',
 
   components: {
-    AppInputWrapper,
-    Field
+    Field,
+    AppInputWrapper
   },
 
   props: {
@@ -75,22 +78,20 @@ export default {
       required: true
     },
 
-    type: {
-      type: String,
-      default: 'text',
+    items: {
+      type: Array,
+      default: () => [],
       required: false
     },
 
-    autocomplete: {
+    itemText: {
       type: String,
-      default: '',
-      required: false
+      default: ''
     },
 
-    rows: {
-      type: [String, Number],
-      default: '4',
-      required: false
+    itemValue: {
+      type: String,
+      default: ''
     }
   },
 
@@ -98,13 +99,14 @@ export default {
 
   setup (props, context) {
     function handleInput (event) {
+      console.log(event)
       context.emit('update:modelValue', event.target.value)
       context.emit('input', event.target.value)
     }
 
     return {
-      handleInput,
-      inputStyles
+      inputStyles,
+      handleInput
     }
   }
 }

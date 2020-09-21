@@ -1,12 +1,10 @@
 <template>
   <div class="mb-2">
-    <label
+    <AppLabel
       v-if="label"
-      :for="id || name"
-      class="font-semibold block"
     >
       {{ label }}
-    </label>
+    </AppLabel>
 
     <slot />
 
@@ -20,9 +18,15 @@
 </template>
 
 <script>
+import AppLabel from './AppLabel'
+
 export default {
   // Name
   name: 'AppInputWrapper',
+
+  components: {
+    AppLabel
+  },
 
   props: {
     label: {

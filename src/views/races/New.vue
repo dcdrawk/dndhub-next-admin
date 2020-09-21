@@ -5,6 +5,11 @@
       @input="handleInput"
     />
 
+    <AppSelect
+      v-model="testData"
+      :items="['foo', 'bar']"
+    />
+
     <div class="flex">
       <AppButton class="mr-2">
         Create
@@ -26,6 +31,7 @@ import { markRaw, ref } from 'vue'
 import AppButton from '@/components/buttons/AppButton'
 import AppForm from '@/components/forms/AppForm'
 import AppInput from '@/components/inputs/AppInput'
+import AppSelect from '@/components/inputs/AppSelect'
 import AppTextArea from '@/components/inputs/AppTextArea'
 
 export default {
@@ -34,10 +40,12 @@ export default {
 
   components: {
     AppButton,
+    AppSelect,
     AppForm
   },
 
   setup () {
+    const testData = ref('')
     const raceData = ref([])
     const rawInput = markRaw(AppInput)
     const rawTextArea = markRaw(AppTextArea)
@@ -82,7 +90,8 @@ export default {
     return {
       formFields,
       handleInput,
-      raceData
+      raceData,
+      testData
       // addDummyRace
     }
   }
