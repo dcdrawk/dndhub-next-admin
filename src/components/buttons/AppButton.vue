@@ -10,12 +10,12 @@ import AppLoadingSpinner from '@/components/spinners/AppLoadingSpinner'
 import { computed } from 'vue'
 
 const buttonStyles = [
-  'bg-gold',
   'py-2 px-4 mb-2',
   'font-medium',
-  'border border-gray rounded-lg',
-  'focus:outline-none',
-  'shadow hover:shadow-md active:shadow-none transition-shadow duration-150'
+  'rounded-lg',
+  // 'border border-gray rounded-lg',
+  'focus:outline-none'
+  // 'shadow hover:shadow-md active:shadow-none transition-shadow duration-150'
 ]
 
 export default {
@@ -35,17 +35,40 @@ export default {
     block: {
       type: Boolean,
       default: false
+    },
+
+    bgColor: {
+      type: String,
+      default: 'primary'
+    },
+
+    textColor: {
+      type: String,
+      default: 'white'
+    },
+
+    flat: {
+      type: Boolean,
+      default: false
+    },
+
+    border: {
+      type: {
+
+      }
     }
   },
 
   setup (props) {
     return {
       buttonStyles,
-      computedButtonStyles: computed(() => {
-        return {
-          'w-full': props.block
+      computedButtonStyles: computed(() => [
+        `bg-${props.bgColor} text-${props.textColor}`,
+        {
+          'w-full': props.block,
+          'shadow hover:shadow-md active:shadow-none transition-shadow duration-150': !props.flat
         }
-      })
+      ])
     }
   }
 }

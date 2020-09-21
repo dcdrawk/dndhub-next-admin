@@ -6,14 +6,20 @@ module.exports = {
     // },
     extend: {
       colors: {
-        primary: '#8f0000',
+        // primary: '#8f0000',
+        primary: '#c73030',
         beige: '#fbedbf',
         green: '#dbe5c3',
         gold: '#e8d065',
         lightGray: '#e3e0db',
         gray: '#bbb8ac',
-        red: '#9b2a1a',
-        lightRed: '#e38d80'
+        red: {
+          400: '#e38d80',
+          500: '#8f0000',
+          600: '#9b2a1a'
+        }
+        // red: '#9b2a1a',
+        // lightRed: '#e38d80'
       },
       spacing: {
         72: '18rem',

@@ -1,19 +1,21 @@
 <template>
-  <div class="px-4 bg-primary shadow sticky top-0 border-b border-gray py-3 flex items-center justify-between text-white">
-    <div class="text-xl font-semibold">
-      {{ $route.name }}
-    </div>
+  <div class="px-4 bg-primary shadow sticky top-0 border-b border-gray py-3 text-white">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="text-xl font-semibold">
+        {{ $route.name }}
+      </div>
 
-    <div v-if="user">
-      <span class="font-semibold mr-4">
-        Welcome, {{ userDisplayName }}
-      </span>
-      <a
-        class="underline cursor-pointer inline-block"
-        @click="signOut"
-      >
-        Sign Out
-      </a>
+      <div v-if="user">
+        <span class="font-semibold mr-4">
+          Welcome, {{ userDisplayName }}
+        </span>
+        <a
+          class="underline cursor-pointer inline-block"
+          @click="signOut"
+        >
+          Sign Out
+        </a>
+      </div>
     </div>
   </div>
 </template>

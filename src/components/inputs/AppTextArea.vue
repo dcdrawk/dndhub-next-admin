@@ -5,16 +5,17 @@
       :name="name"
       :rules="rules"
     >
-      <input
+      <textarea
         v-bind="field"
         :placeholder="placeholder"
         :value="modelValue"
         :type="type"
         :name="name"
         :autocomplete="autocomplete"
-        class="p-2 rounded border-gray border w-full"
+        rows="5"
+        class="p-2 rounded border-gray border w-full h-full block"
         @input="handleInput"
-      >
+      />
 
       <p
         v-if="errorMessage"
