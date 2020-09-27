@@ -8,6 +8,7 @@
       :id="id"
       :label="label"
       :error-message="errorMessage"
+      :class="$attrs.class"
       :name="name"
     >
       <select
@@ -16,6 +17,7 @@
         :value="modelValue"
         :name="name"
         :class="inputStyles"
+        class="h-12"
         @change="handleInput($event)"
       >
         <option

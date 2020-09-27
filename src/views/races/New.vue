@@ -5,10 +5,7 @@
       @input="handleInput"
     />
 
-    <AppSelect
-      v-model="testData"
-      :items="['foo', 'bar']"
-    />
+    <AppAbilityScoreInput />
 
     <div class="flex">
       <AppButton class="mr-2">
@@ -31,7 +28,7 @@ import { markRaw, ref } from 'vue'
 import AppButton from '@/components/buttons/AppButton'
 import AppForm from '@/components/forms/AppForm'
 import AppInput from '@/components/inputs/AppInput'
-import AppSelect from '@/components/inputs/AppSelect'
+import AppAbilityScoreInput from '@/components/inputs/AppAbilityScoreInput'
 import AppTextArea from '@/components/inputs/AppTextArea'
 
 export default {
@@ -40,7 +37,7 @@ export default {
 
   components: {
     AppButton,
-    AppSelect,
+    AppAbilityScoreInput,
     AppForm
   },
 

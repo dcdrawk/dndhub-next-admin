@@ -13,6 +13,7 @@ const buttonStyles = [
   'py-2 px-4 mb-2',
   'font-medium',
   'rounded-lg',
+  'h-12',
   // 'border border-gray rounded-lg',
   'focus:outline-none'
   // 'shadow hover:shadow-md active:shadow-none transition-shadow duration-150'

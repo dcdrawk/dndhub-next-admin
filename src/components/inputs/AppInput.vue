@@ -8,10 +8,11 @@
       :id="id"
       :label="label"
       :error-message="errorMessage"
+      :class="$attrs.class"
       :name="name"
     >
       <input
-        :id="id || name"
+        :id="id || name || null"
         v-bind="field"
         :placeholder="placeholder"
         :value="modelValue"
@@ -19,6 +20,7 @@
         :name="name"
         :autocomplete="autocomplete"
         :class="inputStyles"
+        class="h-12"
         @input="handleInput"
       >
     </AppInputWrapper>
