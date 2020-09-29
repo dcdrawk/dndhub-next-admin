@@ -6,6 +6,9 @@ import store from './store'
 import './plugins/vee-validate'
 import firebase from './plugins/firebase'
 
+// import './assets/css/tailwind.css'
+// import './assets/css/main.css'
+
 createApp(App)
   .use(store)
   .use(router)

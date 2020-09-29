@@ -50,15 +50,26 @@ export default {
 </script>
 
 <style>
+@import "tailwindcss/base";
+/* @import "./custom-base-styles.css"; */
+
+@import "tailwindcss/components";
+/* @import "./custom-components.css"; */
+
+@import "tailwindcss/utilities";
+@import './assets/css/main.css';
+/* @import "./custom-utilities.css"; */
+
+/* @import './assets/css/tailwind.css';
 @tailwind base;
 
 @tailwind components;
 
-@tailwind utilities;
-
+@tailwind utilities; */
 #app {
   @apply bg-lightGray;
   @apply min-h-screen;
   @apply shadow;
 }
+
 </style>

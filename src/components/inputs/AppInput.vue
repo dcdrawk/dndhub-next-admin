@@ -19,7 +19,7 @@
         :type="type"
         :name="name"
         :autocomplete="autocomplete"
-        :class="inputStyles"
+        :class="[inputStyles, { 'border border-primary': errorMessage }]"
         class="h-12"
         @input="handleInput"
       >
@@ -31,6 +31,7 @@
 import { Field } from 'vee-validate'
 import { inputStyles } from './input-styles'
 import AppInputWrapper from './AppInputWrapper'
+import { computed } from 'vue'
 
 export default {
   // Name
@@ -98,6 +99,11 @@ export default {
 
     return {
       inputStyles,
+      computedInputStyles: computed(() => {
+        return {
+          'border border-primary': props.error
+        }
+      }),
       handleInput
     }
   }

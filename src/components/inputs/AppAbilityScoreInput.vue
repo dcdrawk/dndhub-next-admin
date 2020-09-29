@@ -17,7 +17,7 @@
       </AppButton>
 
       <AppSelect
-        class="mr-2"
+        class="mr-2 w-40"
         :model-value="input.abilityScoreName"
         :items="abilityScores"
         @input="input.abilityScoreName = $event"

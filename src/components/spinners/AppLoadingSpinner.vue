@@ -30,7 +30,8 @@ export default {
   position: relative;
   margin: 0 auto;
   width: 24px;
-  stroke: #fff;
+  /* stroke: #fff; */
+  stroke: currentColor;
 
   &:before {
     content: '';

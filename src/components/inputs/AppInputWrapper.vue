@@ -1,7 +1,9 @@
 <template>
-  <div class="mb-2">
+  <div class="mb-4">
     <AppLabel
       v-if="label"
+      :id="id"
+      :name="name"
     >
       {{ label }}
     </AppLabel>
@@ -10,7 +12,7 @@
 
     <p
       v-if="errorMessage"
-      class="text-red"
+      class="text-primary"
     >
       <small>{{ errorMessage }}</small>
     </p>

@@ -1,6 +1,6 @@
 <template>
   <div class="pt-20 container max-w-96 px-4 sm:px-0 mx-auto">
-    <h1 class="text-2xl text-center mb-4">
+    <h1 class="text-center mb-4">
       Sign In
     </h1>
 
@@ -10,7 +10,9 @@
       @submit="signIn"
     >
       <AppInput
+        id="email"
         v-model="userState.email"
+        label="Email"
         name="email"
         placeholder="Email"
         rules="required|email"
@@ -18,22 +20,35 @@
 
       <AppInput
         v-model="userState.password"
+        label="Password"
         name="password"
         placeholder="Password"
         type="password"
         rules="required"
       />
 
-      <AppButton
-        :loading="loading"
-      >
-        Sign In
-      </AppButton>
-
       <AppAlert v-if="errorMessage">
         {{ errorMessage }}
       </AppAlert>
+
+      <AppButton
+        :loading="loading"
+        type="submit"
+        class="mr-2 w-full"
+      >
+        Sign In
+      </AppButton>
     </VeeForm>
+
+    <p>
+      Don't have an account?
+      <router-link
+        to="/"
+        class="underline font-weight-medium"
+      >
+        Create one.
+      </router-link>
+    </p>
   </div>
 </template>
 
@@ -60,6 +75,7 @@ export default {
     const errorMessage = ref('')
     const loading = ref(false)
     const firebase = inject('firebase')
+    // const router = inject('router')
 
     const userState = reactive({
       email: '',

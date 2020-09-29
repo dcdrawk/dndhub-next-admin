@@ -44,16 +44,28 @@
         rules="required|confirmed:password"
       />
 
-      <AppButton
-        :loading="loading"
-      >
-        Create Account
-      </AppButton>
-
       <AppAlert v-if="errorMessage">
         {{ errorMessage }}
       </AppAlert>
+
+      <!-- <div class="flex"> -->
+      <AppButton
+        :loading="loading"
+        class="mr-2 w-full"
+      >
+        Create Account
+      </AppButton>
     </VeeForm>
+
+    <p>
+      Already have an account?
+      <router-link
+        to="/"
+        class="underline font-weight-medium"
+      >
+        Sign In
+      </router-link>
+    </p>
   </div>
 </template>
 
