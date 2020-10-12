@@ -1,8 +1,8 @@
 <template>
   <div class="pt-20 container max-w-96 px-4 sm:px-0 mx-auto">
-    <h1 class="text-center mb-4">
+    <!-- <h3 class="text-center mb-4">
       Sign In
-    </h1>
+    </h3> -->
 
     <VeeForm
       ref="veeForm"
@@ -43,8 +43,7 @@
     <p>
       Don't have an account?
       <router-link
-        to="/"
-        class="underline font-weight-medium"
+        to="/create-account"
       >
         Create one.
       </router-link>

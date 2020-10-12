@@ -26,7 +26,7 @@ import { useStore } from 'vuex'
 
 export default {
   // Name
-  name: 'TheToolbar',
+  name: 'AppToolbar',
 
   setup () {
     const store = useStore()

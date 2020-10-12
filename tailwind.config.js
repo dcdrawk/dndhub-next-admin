@@ -11,8 +11,10 @@ module.exports = {
         beige: '#fbedbf',
         green: '#dbe5c3',
         gold: '#e8d065',
-        lightGray: '#e3e0db',
-        gray: '#bbb8ac',
+        lightGray: '#dcdcdc',
+        darkGray: '#666666',
+        gray: '#a5a5a5',
+        black: 'rgba(0, 0, 0, 0.87)',
         red: {
           400: '#e38d80',
           500: '#ab2020',

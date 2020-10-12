@@ -1,18 +1,17 @@
 <template>
-  <div class="app">
-    <TheToolbar />
+  <AppShell>
     <router-view />
-  </div>
+  </AppShell>
 </template>
 
 <script>
-import TheToolbar from '@/components/layout/TheToolbar'
+import AppShell from '@/components/layout/AppShell'
 
 export default {
   name: 'App',
 
   components: {
-    TheToolbar
+    AppShell
   },
 
   computed: {
@@ -50,26 +49,21 @@ export default {
 </script>
 
 <style>
+/**
+ * Tailwind
+ */
 @import "tailwindcss/base";
-/* @import "./custom-base-styles.css"; */
-
 @import "tailwindcss/components";
-/* @import "./custom-components.css"; */
-
 @import "tailwindcss/utilities";
+
+/**
+ * Custom CSS
+ */
 @import './assets/css/main.css';
-/* @import "./custom-utilities.css"; */
 
-/* @import './assets/css/tailwind.css';
-@tailwind base;
-
-@tailwind components;
-
-@tailwind utilities; */
 #app {
   @apply bg-lightGray;
   @apply min-h-screen;
   @apply shadow;
 }
-
 </style>
