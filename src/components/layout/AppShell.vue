@@ -38,5 +38,6 @@ export default {
 <style>
 .app-shell {
   @apply flex w-full;
+  padding-left: 320px;
 }
 </style>

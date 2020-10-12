@@ -86,6 +86,7 @@ export default {
 
     function handleClick () {
       context.emit('click')
+      if (!props.to) return
       router.push(props.to)
     }
 

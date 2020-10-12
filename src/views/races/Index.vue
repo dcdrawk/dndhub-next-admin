@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
     <div>Races:</div>
-    <AppButton @click="$router.push('/races/new')">
+    <AppButton to="/races/new">
       New Race
     </AppButton>
     <div>

@@ -52,6 +52,8 @@ export default {
 <style>
 .app-side-nav {
   @apply fixed shadow bg-white;
+  left: 0;
+  top: 55px;
 
   /* top: 55px; */
   width: 320px;
