@@ -6,6 +6,7 @@
 @tailwind utilities; */
 
 @import './typography.css';
+@import './material-icons.css';
 /* .test {
 
 } */

@@ -1,5 +1,6 @@
 <template>
   <div class="container mx-auto pt-10">
+    {{ raceData }}
     <AppForm
       :fields="formFields"
       @input="handleInput"
@@ -7,8 +8,13 @@
 
     <AppAbilityScoreInput />
 
+    <!-- {{ formFields }} -->
+
     <div class="flex">
-      <AppButton class="mr-2">
+      <AppButton
+        class="mr-2"
+        @click="create"
+      >
         Create
       </AppButton>
       <AppButton
@@ -24,7 +30,7 @@
 </template>
 
 <script>
-import { markRaw, ref } from 'vue'
+import { computed, inject, markRaw, ref } from 'vue'
 import AppButton from '@/components/buttons/AppButton'
 import AppForm from '@/components/forms/AppForm'
 import AppInput from '@/components/inputs/AppInput'
@@ -43,9 +49,10 @@ export default {
 
   setup () {
     const testData = ref('')
-    const raceData = ref([])
+    // const raceData = ref([])
     const rawInput = markRaw(AppInput)
     const rawTextArea = markRaw(AppTextArea)
+    const firebase = inject('firebase')
 
     const formFields = ref([
       {
@@ -53,6 +60,7 @@ export default {
         label: 'Name',
         placeholder: 'Name',
         name: 'race-name',
+        field: 'name',
         component: rawInput,
         value: ''
       },
@@ -61,34 +69,68 @@ export default {
         label: 'Alignment',
         placeholder: '',
         name: 'alignment',
+        field: 'alignment',
         component: rawTextArea,
         value: ''
       },
       {
-        width: '1/2',
-        placeholder: 'Left',
+        width: 'full',
+        label: 'Size',
+        placeholder: '',
+        name: 'size',
+        field: 'size',
         component: rawInput,
         value: ''
       },
       {
-        width: '1/2',
-        placeholder: 'Right',
+        width: 'full',
+        label: 'Weight',
+        placeholder: '',
+        name: 'weight',
+        field: 'weight',
         component: rawInput,
         value: ''
       }
+      // {
+      //   width: '1/2',
+      //   placeholder: 'Left',
+      //   component: rawInput,
+      //   value: ''
+      // },
+      // {
+      //   width: '1/2',
+      //   placeholder: 'Right',
+      //   component: rawInput,
+      //   value: ''
+      // }
     ])
 
+    const raceData = computed(() => {
+      const value = formFields.value.reduce((acc, item) => {
+        console.log(item)
+        // console.log(item)
+        acc[item.field] = item.value
+        return acc
+      }, {})
+      return value
+    })
+
     function handleInput ({ field, value }) {
-      console.log('handle form input')
-      console.log(field, value)
       field.value = value
+    }
+
+    async function create () {
+      // debugger
+      // console.log(raceData, firebase)
+      await firebase.database().ref('/gameData/races').push(raceData.value)
     }
 
     return {
       formFields,
       handleInput,
       raceData,
-      testData
+      testData,
+      create
       // addDummyRace
     }
   }

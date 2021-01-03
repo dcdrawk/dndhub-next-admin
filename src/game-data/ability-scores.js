@@ -1,10 +1,17 @@
 const abilityScores = [
-  'Strength',
-  'Dexterity',
-  'Constitution',
-  'Intelligence',
-  'Wisdom',
-  'Charisma'
+  'str',
+  'dex',
+  'con',
+  'int',
+  'wis',
+  'cha'
 ]
+
+// const abilityScores = [{
+//   displayName: 'Strength',
+//   fieldName: 'str'
+// }, {
+//   text: ''
+// }]
 
 export default abilityScores

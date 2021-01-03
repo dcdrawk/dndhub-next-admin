@@ -1,47 +1,52 @@
 <template>
-  <div class="w-64">
-    <AppLabel class="reeeeeeee">
+  <div class="ability-score-input w-64">
+    <AppLabel class="mb-4">
       {{ label }}
     </AppLabel>
 
     <div
-      v-for="(input, index) in abilityScoreInputs"
+      v-for="(item, key, index) in abilityScoreInputs"
       :key="index"
-      class="flex"
+      class="ability-score-input__stat"
     >
-      <AppButton
-        class="w-12 mr-2"
-        @click="removeAbilityScoreIncrease(index)"
-      >
-        X
-      </AppButton>
+      <div class="ability-score-input__name">
+        <span>{{ key }}</span>
+      </div>
 
       <AppSelect
-        class="mr-2 w-40"
-        :model-value="input.abilityScoreName"
-        :items="abilityScores"
-        @input="input.abilityScoreName = $event"
+        class="ability-score-input__value"
+        :items="abilityScoreIncreaseOptions"
+        :model-value="item"
+        @input="abilityScoreInputs[key] = $event"
       />
 
-      <AppInput
+      <!-- <AppInput
         class="w-20"
         :model-value="input.value"
         type="number"
         @input="input.value = $event"
-      />
+      /> -->
     </div>
 
-    <AppButton @click="addAbilityScoreIncrease">
+    <AppSelect
+      class="ability-score-input__special"
+      label="Special"
+      :items="specialOptions"
+    />
+
+    {{ abilityScoreInputs }}
+
+    <!-- <AppButton @click="addAbilityScoreIncrease">
       Add Ability Score
-    </AppButton>
+    </AppButton> -->
   </div>
 </template>
 
 <script>
 import AppLabel from './AppLabel'
 import AppSelect from './AppSelect'
-import AppInput from './AppInput'
-import AppButton from '@/components/buttons/AppButton'
+// import AppInput from './AppInput'
+// import AppButton from '@/components/buttons/AppButton'
 import { ref } from 'vue'
 import abilityScores from '@/game-data/ability-scores'
 
@@ -52,8 +57,8 @@ export default {
   // Components
   components: {
     AppLabel,
-    AppButton,
-    AppInput,
+    // AppButton,
+    // AppInput,
     AppSelect
   },
 
@@ -77,26 +82,48 @@ export default {
   },
 
   setup (props) {
-    const defaultAbilityScore = { abilityScoreName: '', value: 0 }
-    const abilityScoreInputs = ref(Array(1).fill(defaultAbilityScore))
+    const defaultAbilityScore = '0'
 
-    function addAbilityScoreIncrease () {
-      abilityScoreInputs.value.push({ ...defaultAbilityScore })
-    }
+    const abilityScoreIncreaseOptions = [
+      '*',
+      '+2',
+      '+1',
+      '0',
+      '-1',
+      '-2'
+    ]
 
-    function removeAbilityScoreIncrease (index) {
-      abilityScoreInputs.value.splice(index, 1)
-    }
+    const abilityScoreInputs = ref(
+      abilityScores.reduce((ac, a) => ({ ...ac, [a]: defaultAbilityScore }), {})
+    )
+
+    const specialOptions = [{
+      text: 'Two +2\'s',
+      value: ''
+    }]
 
     return {
       abilityScores,
       abilityScoreInputs,
-      addAbilityScoreIncrease,
-      removeAbilityScoreIncrease
+      abilityScoreIncreaseOptions,
+      specialOptions
     }
   }
 }
 </script>
 
 <style scoped>
+.ability-score-input {
+  &__stat {
+    @apply flex capitalize;
+  }
+  &__name {
+    width: 50px;
+    @apply flex items-center mb-4;
+  }
+
+  &__value {
+    width: 100px;
+  }
+}
 </style>
