@@ -112,11 +112,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .ability-score-input {
   &__stat {
     @apply flex capitalize;
   }
+
   &__name {
     width: 50px;
     @apply flex items-center mb-4;
