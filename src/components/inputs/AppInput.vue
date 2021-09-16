@@ -61,7 +61,7 @@ export default {
     id: {
       type: String,
       default: '',
-      required: true
+      required: false
     },
 
     name: {
@@ -73,7 +73,7 @@ export default {
     rules: {
       type: String,
       default: '',
-      required: true
+      required: false
     },
 
     type: {

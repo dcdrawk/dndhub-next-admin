@@ -36,7 +36,5 @@ export default {
 </script>
 
 <style scoped>
-.app-checkmark {
-
-}
+/* .app-checkmark {} */
 </style>

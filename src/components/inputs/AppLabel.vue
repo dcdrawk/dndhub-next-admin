@@ -16,13 +16,13 @@ export default {
     id: {
       type: String,
       default: '',
-      required: true
+      required: false
     },
 
     name: {
       type: String,
       default: '',
-      required: true
+      required: false
     }
   }
 }

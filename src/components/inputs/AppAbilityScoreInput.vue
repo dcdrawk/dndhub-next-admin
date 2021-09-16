@@ -1,6 +1,8 @@
 <template>
   <div class="ability-score-input w-64">
-    <AppLabel class="mb-4">
+    <AppLabel
+      class="mb-4"
+    >
       {{ label }}
     </AppLabel>
 
@@ -17,6 +19,7 @@
         class="ability-score-input__value"
         :items="abilityScoreIncreaseOptions"
         :model-value="item"
+        name="ability-score"
         @input="abilityScoreInputs[key] = $event"
       />
 
@@ -31,6 +34,7 @@
     <AppSelect
       class="ability-score-input__special"
       label="Special"
+      name="ability-score-special"
       :items="specialOptions"
     />
 
