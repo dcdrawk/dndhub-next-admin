@@ -35,6 +35,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 /* .app-checkmark {} */
 </style>

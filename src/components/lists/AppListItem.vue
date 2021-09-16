@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .app-list-item {
   @apply w-full p-4 block no-underline cursor-pointer;
   @apply border-b;

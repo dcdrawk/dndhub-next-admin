@@ -88,5 +88,5 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 </style>
