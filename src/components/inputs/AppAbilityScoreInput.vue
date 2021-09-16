@@ -123,8 +123,9 @@ export default {
   }
 
   &__name {
-    width: 50px;
     @apply flex items-center mb-4;
+
+    width: 50px;
   }
 
   &__value {

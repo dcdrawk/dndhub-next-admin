@@ -35,9 +35,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss">
 .app-shell {
   @apply flex w-full;
+
   padding-left: 320px;
 }
 </style>

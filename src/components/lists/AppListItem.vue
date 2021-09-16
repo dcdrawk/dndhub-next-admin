@@ -47,7 +47,7 @@ export default {
   @apply border-b;
   @apply bg-gray-100 hover:bg-gray-200;
 
-  border-color: rgba(0, 0, 0, .12);
+  border-color: rgba(0, 0, 0, 0.12);
 
   /* &:hover {
   } */

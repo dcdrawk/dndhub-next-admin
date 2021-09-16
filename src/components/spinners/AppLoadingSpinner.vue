@@ -33,7 +33,7 @@ export default {
   /* stroke: #fff; */
   stroke: currentColor;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
     padding-top: 100%;
@@ -71,10 +71,12 @@ export default {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -35px;
   }
+
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
