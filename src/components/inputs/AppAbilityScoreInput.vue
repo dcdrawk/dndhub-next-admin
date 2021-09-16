@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import AppLabel from './AppLabel'
-import AppSelect from './AppSelect'
+import AppLabel from './AppLabel.vue'
+import AppSelect from './AppSelect.vue'
 // import AppInput from './AppInput'
 // import AppButton from '@/components/buttons/AppButton'
 import { ref } from 'vue'

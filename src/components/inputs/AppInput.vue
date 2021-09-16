@@ -30,7 +30,7 @@
 <script>
 import { Field } from 'vee-validate'
 import { inputStyles } from './input-styles'
-import AppInputWrapper from './AppInputWrapper'
+import AppInputWrapper from './AppInputWrapper.vue'
 import { computed } from 'vue'
 
 export default {

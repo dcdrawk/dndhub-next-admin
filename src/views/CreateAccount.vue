@@ -72,9 +72,9 @@
 <script>
 // @ is an alias to /src
 import { Form as VeeForm } from 'vee-validate'
-import AppInput from '@/components/inputs/AppInput'
-import AppButton from '@/components/buttons/AppButton'
-import AppAlert from '@/components/notifications/AppAlert'
+import AppInput from '@/components/inputs/AppInput.vue'
+import AppButton from '@/components/buttons/AppButton.vue'
+import AppAlert from '@/components/notifications/AppAlert.vue'
 // import * as yup from 'yup'
 import { reactive, ref, inject } from 'vue'
 

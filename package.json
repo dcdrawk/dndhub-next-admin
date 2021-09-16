@@ -3,32 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@vee-validate/rules": "^4.0.0-beta.0",
-    "core-js": "^3.6.5",
     "firebase": "^7.23.0",
     "register-service-worker": "^1.7.1",
     "tailwindcss": "^1.9.0",
     "vee-validate": "^4.0.0-beta.8",
-    "vue": "^3.0.0-0",
+    "vue": "^3.2.6",
     "vue-router": "^4.0.0-beta.13",
     "vuex": "^4.0.0-0",
     "yup": "^0.29.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.7",
-    "@vue/cli-plugin-eslint": "^4.5.7",
-    "@vue/cli-plugin-pwa": "^4.5.7",
-    "@vue/cli-plugin-router": "^4.5.7",
-    "@vue/cli-plugin-unit-jest": "^4.5.7",
-    "@vue/cli-plugin-vuex": "^4.5.7",
-    "@vue/cli-service": "^4.5.7",
-    "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^2.0.0-beta.6",
     "autoprefixer": "^9.8.6",
@@ -44,7 +36,10 @@
     "postcss-nested": "^4.2.3",
     "stylelint-config-recommended": "^3.0.0",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-alpha.5"
+    "vue-jest": "^5.0.0-alpha.5",
+    "@vitejs/plugin-vue": "^1.6.1",
+    "@vue/compiler-sfc": "^3.2.6",
+    "vite": "^2.5.4"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

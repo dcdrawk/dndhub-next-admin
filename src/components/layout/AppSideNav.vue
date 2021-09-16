@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import AppList from '@/components/lists/AppList'
-import AppListItem from '@/components/lists/AppListItem'
+import AppList from '@/components/lists/AppList.vue'
+import AppListItem from '@/components/lists/AppListItem.vue'
 
 export default {
   // Name

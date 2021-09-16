@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import AppInput from '@/components/inputs/AppInput'
-import AppTextArea from '@/components/inputs/AppTextArea'
+import AppInput from '@/components/inputs/AppInput.vue'
+import AppTextArea from '@/components/inputs/AppTextArea.vue'
 
 export default {
   // Name

@@ -10,10 +10,10 @@
 <script>
 import { markRaw, ref } from 'vue'
 // import AppButton from '@/components/buttons/AppButton'
-import AppForm from '@/components/forms/AppForm'
-import AppInput from '@/components/inputs/AppInput'
+import AppForm from '@/components/forms/AppForm.vue'
+import AppInput from '@/components/inputs/AppInput.vue'
 // import AppAbilityScoreInput from '@/components/inputs/AppAbilityScoreInput'
-import AppTextArea from '@/components/inputs/AppTextArea'
+import AppTextArea from '@/components/inputs/AppTextArea.vue'
 // import RaceSchema from '@/game-data/race-schema'
 
 export default {

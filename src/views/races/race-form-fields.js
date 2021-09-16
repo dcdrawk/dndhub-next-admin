@@ -1,7 +1,7 @@
 
 import { markRaw } from 'vue'
-import AppInput from '@/components/inputs/AppInput'
-import AppTextArea from '@/components/inputs/AppTextArea'
+import AppInput from '@/components/inputs/AppInput.vue'
+import AppTextArea from '@/components/inputs/AppTextArea.vue'
 
 const rawInput = markRaw(AppInput)
 const rawTextArea = markRaw(AppTextArea)

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import AppLabel from './AppLabel'
+import AppLabel from './AppLabel.vue'
 
 export default {
   // Name

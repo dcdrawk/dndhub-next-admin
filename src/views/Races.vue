@@ -12,7 +12,7 @@
 
 <script>
 import { inject, ref } from 'vue'
-import AppButton from '@/components/buttons/AppButton'
+import AppButton from '@/components/buttons/AppButton.vue'
 
 export default {
   // Name

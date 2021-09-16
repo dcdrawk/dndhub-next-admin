@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import AppLoadingSpinner from '@/components/spinners/AppLoadingSpinner'
+import AppLoadingSpinner from '@/components/spinners/AppLoadingSpinner.vue'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 

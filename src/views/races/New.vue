@@ -31,11 +31,11 @@
 
 <script>
 import { computed, inject, ref } from 'vue'
-import AppButton from '@/components/buttons/AppButton'
-import AppForm from '@/components/forms/AppForm'
+import AppButton from '@/components/buttons/AppButton.vue'
+import AppForm from '@/components/forms/AppForm.vue'
 import RaceFormFields from './race-form-fields'
 // import AppInput from '@/components/inputs/AppInput'
-import AppAbilityScoreInput from '@/components/inputs/AppAbilityScoreInput'
+import AppAbilityScoreInput from '@/components/inputs/AppAbilityScoreInput.vue'
 // import AppTextArea from '@/components/inputs/AppTextArea'
 
 export default {

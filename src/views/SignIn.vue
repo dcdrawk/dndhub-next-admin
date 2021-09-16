@@ -19,6 +19,7 @@
       />
 
       <AppInput
+        id="password"
         v-model="userState.password"
         label="Password"
         name="password"
@@ -54,9 +55,9 @@
 <script>
 import { reactive, ref, inject } from 'vue'
 import { Form as VeeForm } from 'vee-validate'
-import AppInput from '@/components/inputs/AppInput'
-import AppButton from '@/components/buttons/AppButton'
-import AppAlert from '@/components/notifications/AppAlert'
+import AppInput from '@/components/inputs/AppInput.vue'
+import AppButton from '@/components/buttons/AppButton.vue'
+import AppAlert from '@/components/notifications/AppAlert.vue'
 
 export default {
   name: 'SignIn',

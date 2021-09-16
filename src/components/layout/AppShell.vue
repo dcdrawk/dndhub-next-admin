@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import AppToolbar from '@/components/layout/AppToolbar'
-import AppSideNav from '@/components/layout/AppSideNav'
+import AppToolbar from '@/components/layout/AppToolbar.vue'
+import AppSideNav from '@/components/layout/AppSideNav.vue'
 // import { computed } from 'vue'
 
 export default {
