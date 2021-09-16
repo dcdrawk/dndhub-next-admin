@@ -1,8 +1,7 @@
 module.exports = {
-  extends: 'stylelint-config-recommended',
+  extends: 'stylelint-config-standard',
 
   rules: {
-    'selector-nested-pattern': '^&',
     'at-rule-no-unknown': [
       true,
       {
@@ -16,12 +15,11 @@ module.exports = {
       }
     ],
     'declaration-block-trailing-semicolon': null,
-    'no-descending-specificity': null,
-    'no-empty-source': null
+    'no-descending-specificity': null
   },
 
   'files.associations': {
     '*.css': 'postcss',
-    '*.vue': 'css'
+    '*.vue': 'postcss'
   }
 }

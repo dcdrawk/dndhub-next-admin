@@ -45,12 +45,12 @@ export default {
 
     bgColor: {
       type: String,
-      default: 'primary hover:bg-red-500'
+      default: 'bg-blue-500 hover:bg-blue-600'
     },
 
     textColor: {
       type: String,
-      default: 'white'
+      default: 'text-white'
     },
 
     flat: {
@@ -65,7 +65,7 @@ export default {
 
     borderColor: {
       type: String,
-      default: 'gray'
+      default: 'border-gray-400'
     },
 
     type: {
@@ -90,14 +90,19 @@ export default {
       router.push(props.to)
     }
 
+    // const hasDefaultBgColor = computed(() => props.bgColor === 'bg-blue-500 hover:bg-blue-600')
+
     return {
       buttonStyles,
       computedButtonStyles: computed(() => [
-        `bg-${props.bgColor} text-${props.textColor}`,
+        // props.bgColor,
+        props.textColor,
         {
+          [props.bgColor]: !props.flat,
           'w-full': props.block,
-          [`border border-${props.borderColor}`]: props.outlined,
-          'shadow hover:shadow-md active:shadow-none transition-shadow duration-200 ease-out': !props.flat
+          [`border ${props.borderColor}`]: props.outlined,
+          'shadow hover:shadow-md active:shadow-none transition-shadow duration-200 ease-out': !props.flat,
+          'bg-gray-200 hover:bg-gray-300': props.flat
         }
       ]),
       handleClick

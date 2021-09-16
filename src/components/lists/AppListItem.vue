@@ -45,8 +45,10 @@ export default {
 .app-list-item {
   @apply w-full p-4 block no-underline cursor-pointer;
   @apply border-b;
+  @apply bg-gray-100 hover:bg-gray-200;
+
   border-color: rgba(0, 0, 0, .12);
-  @apply bg-gray-400;
+
   /* &:hover {
   } */
 }

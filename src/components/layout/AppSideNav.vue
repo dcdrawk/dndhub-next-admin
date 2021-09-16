@@ -49,15 +49,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .app-side-nav {
-  @apply fixed shadow bg-white;
-  left: 0;
-  top: 55px;
+  @apply fixed shadow-md bg-white;
 
-  /* top: 55px; */
+  left: 0;
+  top: 52px;
   width: 320px;
-  /* height: 100%; */
   min-height: calc(100vh - 55px);
   max-height: calc(100vh - 55px);
   overflow-y: auto;
@@ -66,4 +64,5 @@ export default {
     /* height: 100%; */
   }
 }
+
 </style>

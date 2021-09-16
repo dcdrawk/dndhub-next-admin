@@ -19,7 +19,7 @@
         :type="type"
         :name="name"
         :autocomplete="autocomplete"
-        :class="[inputStyles, { 'border border-primary': errorMessage }]"
+        :class="[inputStyles, { 'border border-red-600': errorMessage }]"
         class="h-12"
         @input="handleInput"
       >
@@ -101,7 +101,7 @@ export default {
       inputStyles,
       computedInputStyles: computed(() => {
         return {
-          'border border-primary': props.error
+          'border border-red': props.error
         }
       }),
       handleInput

@@ -1,8 +1,8 @@
 <template>
-  <div class="px-4 bg-primary shadow sticky top-0 border-b border-gray py-3 text-white">
+  <div class="px-4 bg-blue-600 shadow sticky top-0 py-3 text-white">
     <div class="mx-auto flex items-center justify-between">
-      <div class="text-xl font-semibold">
-        DnD Hub Admin - {{ $route.name }}
+      <div class="text-xl font-display">
+        DNDHub Admin - {{ $route.name }}
       </div>
 
       <div v-if="user">

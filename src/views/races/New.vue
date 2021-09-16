@@ -18,7 +18,6 @@
         Create
       </AppButton>
       <AppButton
-        bg-color="white"
         outlined
         text-color="black"
         flat
