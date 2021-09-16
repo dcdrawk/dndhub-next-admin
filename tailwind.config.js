@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: [
+    './src/**/*.vue',
+    './src/**/*.js'
+  ],
   theme: {
     // boxShadow: {
     //   inner: 'inset 0 4px 10px 3px rgba(0, 0, 0, 0.25)'
@@ -11,10 +15,17 @@ module.exports = {
         beige: '#fbedbf',
         green: '#dbe5c3',
         gold: '#e8d065',
-        lightGray: '#dcdcdc',
-        darkGray: '#666666',
-        gray: '#a5a5a5',
+        // lightGray: '#dcdcdc',
+        // darkGray: '#666666',
+        // gray: '#a5a5a5',
         black: 'rgba(0, 0, 0, 0.87)',
+
+        gray: {
+          DEFAULT: '#a5a5a5',
+          400: '#dcdcdc',
+          500: '#a5a5a5',
+          600: '#666666'
+        },
         red: {
           400: '#e38d80',
           500: '#ab2020',

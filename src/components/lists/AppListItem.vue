@@ -46,8 +46,8 @@ export default {
   @apply w-full p-4 block no-underline cursor-pointer;
   @apply border-b;
   border-color: rgba(0, 0, 0, .12);
+  @apply bg-gray-400;
   /* &:hover {
-    @apply bg-lightGray;
   } */
 }
 </style>

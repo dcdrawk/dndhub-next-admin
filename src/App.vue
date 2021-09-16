@@ -62,7 +62,7 @@ export default {
 @import './assets/css/main.css';
 
 #app {
-  @apply bg-lightGray;
+  @apply bg-gray-400;
   @apply min-h-screen;
   @apply shadow;
 }
